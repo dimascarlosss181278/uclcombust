@@ -31,32 +31,7 @@ const DataTable = () => {
 
     return (
         <>
-            <Pagination page={page} onPageChange={changePage} />
-            <div className="table-responsive">
-                <table className="table table-striped table-sm">
-                    <thead>
-                        <tr>
-                            <th>Data</th>
-                            <th>Vendedor</th>
-                            <th>Clientes visitados</th>
-                            <th>Negócios fechados</th>
-                            <th>Valor</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {page.content?.map(item => (
-                            <tr key={item.id}>
-                                <td>{formatLocalDate(item.date, "dd/MM/yyyy")}</td>
-                                <td>{item.seller.name}</td>
-                                <td>{item.visited}</td>
-                                <td>{item.deals}</td>
-                                <td>{item.amount.toFixed(2)}</td>
-                            </tr>
-                        ))}
 
-                    </tbody>
-                </table>
-            </div>
         </>
     );
 }
